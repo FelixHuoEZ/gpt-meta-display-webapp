@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GPT Meta Display Web App PoC</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="viewport">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-dot"></span>
+          <span id="title">GPT Meta</span>
+        </div>
+        <div class="status-row">
+          <span class="chip" id="source-chip">BOOT</span>
+          <span class="chip" id="conn-chip">LOCAL</span>
+        </div>
+      </header>
+
+      <main class="hero">
+        <p class="eyebrow">Display Web App PoC</p>
+        <h1 id="subtitle">等待字幕输入</h1>
+        <p class="caption" id="caption">支持 query / BroadcastChannel / WebSocket 注入</p>
+      </main>
+
+      <section class="action-dock" aria-label="controls">
+        <button class="focusable action" data-action="prev">上一句</button>
+        <button class="focusable action action-primary" data-action="demo">轮播</button>
+        <button class="focusable action" data-action="next">下一句</button>
+        <button class="focusable action" data-action="diag">诊断</button>
+      </section>
+
+      <aside class="diag hidden" id="diag-panel">
+        <div><strong>source</strong><span id="diag-source">boot</span></div>
+        <div><strong>ws</strong><span id="diag-ws">off</span></div>
+        <div><strong>updated</strong><span id="diag-updated">-</span></div>
+        <div><strong>query</strong><span id="diag-query">-</span></div>
+      </aside>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+  </html>
